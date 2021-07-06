@@ -1,6 +1,6 @@
-package com.sparta.week01_hw.controller;
+package com.sparta.homework.controller;
 
-import com.sparta.week01_hw.Person;
+import com.sparta.homework.Person;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,4 +1,4 @@
-package com.sparta.week01_hw;
+package com.sparta.homework;
 
 public class Person {
     private String name;
