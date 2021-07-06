@@ -2,6 +2,7 @@ package com.sparta.week02;
 
 import com.sparta.week02.domain.Course;
 import com.sparta.week02.domain.CourseRepository;
+import com.sparta.week02.service.CourseService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,26 +15,35 @@ import java.util.List;
 @SpringBootApplication
 public class Week02Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Week02Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Week02Application.class, args);
+    }
 
-	// 프로젝트를 생성하지 않고 repository에 대한 이해를 돕기 위한 코드
-	// 현업에선 이런 코드 작성 안함
-	@Bean
-	public CommandLineRunner demo(CourseRepository repository) {
-		return (args) -> {
+    @Bean
+    public CommandLineRunner demo(CourseRepository courseRepository, CourseService courseService) {
+        return (args) -> {
+            courseRepository.save(new Course("프론트엔드의 꽃, 리액트", "임민영"));
 
-			Course course1 = new Course("웹개발의 봄 Spring", "남병관");
-			repository.save(course1);
+            System.out.println("데이터 인쇄");
+            List<Course> courseList = courseRepository.findAll();
+            for (int i = 0; i < courseList.size(); i++) {
+                Course course = courseList.get(i);
+                System.out.println(course.getId());
+                System.out.println(course.getTitle());
+                System.out.println(course.getTutor());
+            }
 
-			List<Course> courseList = repository.findAll();
-			for (int i = 0; i < courseList.size(); i++) {
-				Course c = courseList.get(i);
-				System.out.println(c.getTitle());
-				System.out.println(c.getTutor());
-			}
+            Course new_course = new Course("웹개발의 봄, Spring", "임민영");
+            courseService.update(1L, new_course);
+            courseList = courseRepository.findAll();
+            for (int i = 0; i < courseList.size(); i++) {
+                Course course = courseList.get(i);
+                System.out.println(course.getId());
+                System.out.println(course.getTitle());
+                System.out.println(course.getTutor());
+            }
 
-		};
-	}
+            courseRepository.deleteAll();
+        };
+    }
 }
