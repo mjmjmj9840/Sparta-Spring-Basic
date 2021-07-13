@@ -11,3 +11,8 @@
 1. [RDBMS, H2, SQL](https://mjmjmj98.tistory.com/137)
 2. [JPA의 CRUD와 Repository](https://mjmjmj98.tistory.com/139)
 3. [Lombok, DTO, Controller](https://mjmjmj98.tistory.com/140)
+
+
+## 3주차 학습정리
+1. [Timeline Service 서버](https://mjmjmj98.tistory.com/143)
+2. [Timeline Service 클라이언트](https://mjmjmj98.tistory.com/144)
