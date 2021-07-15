@@ -175,3 +175,7 @@ out/
 ### VS Code ###
 .vscode/
 
+
+
+### Client Info ###
+week04/src/main/java/com/sparta/week04/utils/NaverShopSearch.java
