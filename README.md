@@ -16,3 +16,8 @@
 ## 3주차 학습정리
 1. [Timeline Service 서버](https://mjmjmj98.tistory.com/143)
 2. [Timeline Service 클라이언트](https://mjmjmj98.tistory.com/144)
+
+
+## 4주차 학습정리
+1. [네이버 쇼핑 API 이용하기](https://mjmjmj98.tistory.com/146)
+2. [<나만의 셀렉샵> 서버](https://mjmjmj98.tistory.com/147)
