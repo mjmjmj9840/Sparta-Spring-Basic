@@ -199,6 +199,14 @@ button {
     font-weight: bold;
 }
 
+.site-info {
+    background-color: #15aabf;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+}
+
 #product-container {
     grid-template-columns: 100px 50px 100px;
     grid-template-rows: 80px auto 80px;

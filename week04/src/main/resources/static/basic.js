@@ -133,7 +133,7 @@ function showProduct() {
 }
 
 function addProductItem(product) {
-    return `<div class="product-card" onclick="${product.link}">
+    return `<div class="product-card" onclick="window.location.href='${product.link}'">
                 <div class="card-header">
                     <img src="${product.image}" alt="">
                 </div>
@@ -143,6 +143,9 @@ function addProductItem(product) {
                     </div>
                     <div class="lprice">
                     <span>${numberWithCommas(product.lprice)}</span>원
+                    </div>
+                    <div class="myprice">
+                    <div>My Price: ${numberWithCommas(product.myprice)}원</div>
                     </div>
                     <div class="isgood ${product.lprice <= product.myprice ? '' : 'none'}">
                         최저가
