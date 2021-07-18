@@ -133,23 +133,26 @@ function showProduct() {
 }
 
 function addProductItem(product) {
-    return `<div class="product-card" onclick="window.location.href='${product.link}'">
-                <div class="card-header">
+    return `<div class="product-card">
+                <div class="card-header" onclick="window.location.href='${product.link}'">
                     <img src="${product.image}" alt="">
                 </div>
                 <div class="card-body">
-                    <div class="title">
+                    <div class="isgood ${product.lprice <= product.myprice ? '' : 'none'}" onclick="window.location.href='${product.link}'">
+                        ⭐최저가⭐
+                    </div>
+                    <div class="title" onclick="window.location.href='${product.link}'">
                         ${product.title}
                     </div>
-                    <div class="lprice">
+                    <div class="lprice" onclick="window.location.href='${product.link}'">
                     <span>${numberWithCommas(product.lprice)}</span>원
                     </div>
-                    <div class="myprice">
+                    <div class="myprice" onclick="window.location.href='${product.link}'">
                     <div>My Price: ${numberWithCommas(product.myprice)}원</div>
                     </div>
-                    <div class="isgood ${product.lprice <= product.myprice ? '' : 'none'}">
-                        최저가
-                    </div>
+                    <button class="delete-btn" onclick='deleteProduct(${product.id})'>
+                        삭제하기
+                    </button>
                 </div>
             </div>`;
 }
@@ -169,6 +172,17 @@ function setMyprice() {
         success: function (response) {
             $('#container').removeClass('active');
             alert('성공적으로 등록되었습니다.');
+            window.location.reload();
+        }
+    })
+}
+
+function deleteProduct(id) {
+    $.ajax({
+        type: 'DELETE',
+        url: `/api/products/${id}`,
+        success: function (response) {
+            alert('성공적으로 삭제되었습니다.');
             window.location.reload();
         }
     })
