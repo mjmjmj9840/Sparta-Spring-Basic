@@ -1,6 +1,11 @@
 # Sparta-Spring-Basic
 
 
+#### <나만의 셀렉샵>  
+http://sparta-webdev-mj.shop/  
+원하는 상품을 검색하고 나의 최저가를 설정할 수 있는 서비스  
+
+
 ## 1주차 학습정리
 1. [웹과 스프링 기본 개념](https://mjmjmj98.tistory.com/134)
 2. [자바 기초 문법](https://mjmjmj98.tistory.com/135)
@@ -21,3 +26,7 @@
 ## 4주차 학습정리
 1. [네이버 쇼핑 API 이용하기](https://mjmjmj98.tistory.com/146)
 2. [<나만의 셀렉샵> 서버](https://mjmjmj98.tistory.com/147)
+
+
+## 5주차 학습정리
+1. [AWS를 이용한 배포](https://mjmjmj98.tistory.com/148)
